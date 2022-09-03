@@ -34,3 +34,27 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 1. Run script
 
 ### `npm start`
+
+# REFERRENCES
+React.js + Node.js + Express + MongoDB example: MERN stack CRUD App
+https://www.bezkoder.com/react-node-express-mongodb-mern-stack/
+
+Node.js, Express & MongoDb: Build a CRUD Rest Api example
+https://www.bezkoder.com/node-express-mongodb-crud-rest-api/
+
+Integrate React with Node.js Express on same Server/Port
+https://www.bezkoder.com/integrate-react-express-same-server-port/
+
+React + Node.js Express + MySQL: CRUD example
+https://bezkoder.com/react-node-express-mysql/
+
+React + Node.js Express + PostgreSQL: CRUD example
+https://bezkoder.com/react-node-express-postgresql/
+
+React + Node.js Express + MySQL/PostgreSQL: JWT Authentication example
+https://bezkoder.com/react-express-authentication-jwt/
+
+React + Node.js Express + MongoDB: JWT Authentication example
+https://bezkoder.com/react-node-mongodb-auth/
+
+
