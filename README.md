@@ -35,6 +35,10 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 
 ### `npm start`
 
+# Building the production code
+
+### `npm run build`
+
 # REFERRENCES
 React.js + Node.js + Express + MongoDB example: MERN stack CRUD App
 
