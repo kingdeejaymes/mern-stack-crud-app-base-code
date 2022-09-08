@@ -25,11 +25,15 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 ### `DB=mongodb+srv://deej:mernstack2022@cluster0.vzroueu.mongodb.net/mern_db?retryWrites=true&w=majority`
 ### `PORT=3001`
 
+3. Export the deployable static/frontend files then copy all of the contents of `build` dir of frontend to `views` dir of backend
+
+### `npm run build`
+
 3. Run server using Nodemon
 
 ### `nodemon server`
 
-# Running the Front End
+# Running the Front End (Separately)
 
 1. Run script
 
