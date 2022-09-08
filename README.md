@@ -29,11 +29,11 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 
 ### `npm run build`
 
-3. Run server using Nodemon
+4. Run server using Nodemon
 
 ### `nodemon server`
 
-# Running the Front End (Separately)
+# Running the Front End separately (Optional)
 
 1. Run script
 
@@ -42,6 +42,8 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 # Building the production code
 
 ### `npm run build`
+
+
 
 # REFERRENCES
 React.js + Node.js + Express + MongoDB example: MERN stack CRUD App
