@@ -1,13 +1,9 @@
 const express = require("express");
-const cors = require("cors");
+const path = __dirname + '/views/';
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
 
-var corsOptions = {
-  origin: "http://localhost:3000"
-};
-app.use(cors(corsOptions));
 // parse requests of content-type - application/json
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
@@ -26,15 +22,20 @@ mongoose
 mongoose.Promise = global.Promise;
 
 //Handle CORS Issue when FE access BE APIs
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-//     next();
-// });
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    next();
+});
 
 // simple route
-app.get("/", (req, res) => {
-  res.json({ message: "NodeJS Backend" });
+// app.get("/", (req, res) => {
+//   res.json({ message: "Backend Working..." });
+// });
+
+app.use(express.static(path));
+app.get('/', function (req,res) {
+  res.sendFile(path + "index.html");
 });
 
 require("./routes/task.route")(app);
