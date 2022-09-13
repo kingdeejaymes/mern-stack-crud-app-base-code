@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import AuthService from "../services/auth.service";
+
 
 const Login = props => {
 
   const initialUserState = {
-    name: "",
-    id: "",
+    username: "",
+    password: "",
   };
 
   const [user, setUser] = useState(initialUserState);
@@ -14,9 +17,24 @@ const Login = props => {
     setUser({ ...user, [name]: value });
   };
 
-  const login = () => {
-    props.login(user)
-    props.history.push('/');
+  // const login = () => {
+  //   props.login(user)
+  //   props.history.push('/');
+  // }
+
+  const login = async () => {
+
+    AuthService.login(user)
+      .then(response => {
+        console.log(response.data);
+        if (response.data.token) {
+          localStorage.setItem("user", JSON.stringify(response.data));
+        }
+        props.history.push('/todopage');
+      })
+      .catch(e => {
+        console.log('LOGIN ERROR ===> ', e);
+      });
   }
 
   return (
@@ -31,9 +49,9 @@ const Login = props => {
                   className="form-control"
                   id="floatingInput"
                   required
-                  value={user.name}
+                  value={user.username}
                   onChange={handleInputChange}
-                  name="name"
+                  name="username"
                   placeholder="Username"
                 />
               {/* </div></div><input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> */}
@@ -45,23 +63,34 @@ const Login = props => {
                 className="form-control"
                 id="floatingPassword"
                 required
-                value={user.id}
+                value={user.password}
                 onChange={handleInputChange}
-                name="id"
+                name="password"
                 placeholder="Password"
               />
               {/* <input type="password" class="form-control" id="floatingPassword" placeholder="Password"> */}
               <label for="floatingPassword">Password</label>
             </div>
             <div className="container" style={{ marginTop: '20px'}}>
-              <div className="row justify-content-md-center">
-                <div class="col"></div>
-                <div class="col col-md-auto">
+              <div className="row">
+                <div className="col"></div>
+                <div className="col col-md-auto">
                   <button onClick={login} className="btn btn-success">
                     Login
                   </button>
                 </div>
-                <div class="col"></div>
+                <div className="col"></div>
+              </div>
+              <div className="row">
+                <div className="col"></div>
+                <div className="col col-md-auto">
+                  <small>No Account Yet? 
+                    <Link to={"/signup"} className="nav-link me-auto">
+                      <span style={{color:'blue'}}>Register here</span>
+                    </Link>
+                  </small>
+                </div>
+                <div className="col"></div>
               </div>
             </div>
           </div>

@@ -1,10 +1,11 @@
 import http from "../http-common";
+import authHeader from "./auth-header";
 
 class TaskDataService {
 
   getAll(page = 0) {
     //return http.get(`restaurants?page=${page}`);
-    return http.get("/tasks");
+    return http.get("/tasks", { headers: authHeader() });
   }
 
   get(id) {
@@ -16,7 +17,7 @@ class TaskDataService {
   } 
 
   createTask(data) {
-    return http.post("/tasks", data);
+    return http.post("/tasks", data , { headers: authHeader() });
   }
 
   updateReview(data) {

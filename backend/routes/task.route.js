@@ -1,10 +1,12 @@
 module.exports = app => {
     const tasks = require("../controllers/task.controller");
+    const authJwt = require("../utils/authJWT");
     var router = require("express").Router();
+    
     // Create a new Task
-    router.post("/", tasks.create);
+    router.post("/", authJwt.verifyToken, tasks.create);
     // Retrieve all Task
-    router.get("/", tasks.findAll);
+    router.get("/", authJwt.verifyToken, tasks.findAll);
     // // Retrieve all published Task
     // router.get("/published", tasks.findAllPublished);
     // // Retrieve a single Task with id

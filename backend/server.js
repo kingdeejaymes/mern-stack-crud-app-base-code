@@ -24,7 +24,7 @@ mongoose.Promise = global.Promise;
 //Handle CORS Issue when FE access BE APIs
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Access-Token');
     next();
 });
 
@@ -38,6 +38,7 @@ app.get('/', function (req,res) {
   res.sendFile(path + "index.html");
 });
 
+require("./routes/auth.route")(app); // login and registration
 require("./routes/task.route")(app);
 
 try {

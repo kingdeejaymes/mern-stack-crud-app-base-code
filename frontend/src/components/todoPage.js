@@ -68,17 +68,18 @@ const ToDoPage = props => {
   return (
     <div >
       <div className="row">
-        <div className="col-10">
-        <header className="header">
-          <h2>This is based on &nbsp;
-            <a href="https://www.youtube.com/watch?v=w7ejDZ8SWv8" rel="noreferrer" target="_blank">
-              Traversy Media Tutorial
-            </a>
-          </h2>
-        </header>
+        <div className="col-9">
+          <header className="header">
+            <h2>This is based on &nbsp;
+              <a href="https://www.youtube.com/watch?v=w7ejDZ8SWv8" rel="noreferrer" target="_blank">
+                Traversy Media Tutorial
+              </a>
+            </h2>
+          </header>
         </div>
-        <div className="col-2">
+        <div className="col-3">
           <button
+              style={{marginRight: '30px'}}
               type="button"
               onClick={() => setShowAddTask(!showAddTask)}
               className= { btnClass }
