@@ -43,7 +43,9 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 
 ### `npm run build`
 
-### TODO on FrontEnd Routes: Implement Route Guards for Authenticated and Unauthenticated Access
+# TODO on FrontEnd Routes
+
+Implement Route Guards for Authenticated and Unauthenticated Access
 
 # REFERRENCES
 React.js + Node.js + Express + MongoDB example: MERN stack CRUD App
