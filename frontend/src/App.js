@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import 'bootswatch/dist/lux/bootstrap.min.css'; 
 import 'bootstrap/dist/js/bootstrap.bundle'
@@ -14,7 +14,12 @@ import authService from "./services/auth.service";
 function App() {
   const [user, setUser] = React.useState(authService.getCurrentUser());
 
-  async function logout() {
+  useEffect(() => {
+
+    
+  }, []);
+
+  let logout = async () => {
     setUser(null);
     authService.logout();
     window.location.href='/login';
@@ -58,7 +63,7 @@ function App() {
 
       <div className="container" style={{ marginTop: "120px"}}>
         <Switch>
-          <Route exact path={["/", "/todopage"]} component={ToDoPage} />
+          <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
           <Route 
             path="/restaurants/:id/review"
             render={(props) => (
@@ -80,7 +85,7 @@ function App() {
           <Route 
             path="/login"
             render={(props) => (
-              <Login {...props} />
+              <Login {...props} setUser={setUser} />
             )}
           />
           <Route 

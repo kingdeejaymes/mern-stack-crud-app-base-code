@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AuthService from "../services/auth.service";
 
@@ -29,6 +29,7 @@ const Login = props => {
         console.log(response.data);
         if (response.data.token) {
           localStorage.setItem("user", JSON.stringify(response.data));
+          props.setUser(AuthService.getCurrentUser());
         }
         props.history.push('/todopage');
       })

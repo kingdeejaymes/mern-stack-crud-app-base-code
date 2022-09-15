@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
+// import { useLocation } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 import { FaTimes } from 'react-icons/fa'
 import AddTask from './todoAdd';
 import TaskDataService from '../services/task.service';
@@ -103,12 +103,12 @@ const ToDoPage = props => {
             //   className={`task ${task.reminder && 'reminder'}`}
             //   onDoubleClick={() => onToggle(task.id)}
             // >
-            <div className="card text-white bg-dark mb-3" >
+            <div className="card text-white bg-dark mb-3" key={task._id} >
               {/* <div class="card-header">Header</div> */}
-              <div class="card-body">
+              <div className="card-body">
                 <div className="row">
                   <div className="col-11">
-                    <h4 class="card-title">{task.task_name}{' '}</h4>
+                    <h4 className="card-title">{task.task_name}{' '}</h4>
                   </div>
                   <div className="col-1 justify-content-end">
                     <FaTimes
