@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import 'bootswatch/dist/lux/bootstrap.min.css'; 
 import 'bootstrap/dist/js/bootstrap.bundle'
@@ -12,18 +12,18 @@ import ToDoPage from "./components/todoPage";
 import authService from "./services/auth.service";
 
 function App() {
-  const [user, setUser] = React.useState(authService.getCurrentUser());
 
-  useEffect(() => {
-
-    
-  }, []);
-
+  const [user, setUser] = useState(authService.getCurrentUser());
+  
   let logout = async () => {
     setUser(null);
     authService.logout();
     window.location.href='/login';
   }
+
+  useEffect(() => {
+    console.log('Current User ==>', user);
+  }, []);
 
   return (
     <div>
@@ -49,7 +49,7 @@ function App() {
             <div className="d-flex">
                 { user ? (
                   <a onClick={logout} className="nav-link me-auto">
-                    LOGOUT {user.name}
+                    LOGOUT - {user.username}
                   </a>
                 ) : (            
                 <Link to={"/login"} className="nav-link me-auto">
@@ -98,6 +98,7 @@ function App() {
       </div>
     </div>
   );
+
 }
 
 export default App;

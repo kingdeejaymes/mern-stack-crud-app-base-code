@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // parse requests of content-type - application/json
+// same as like the body parser
 app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
@@ -34,6 +35,7 @@ app.use((req, res, next) => {
 //   res.json({ message: "Backend Working..." });
 // });
 
+// Serve the static files generated from Frontend(ReactJS) in 'views' dir
 app.use(express.static(path));
 app.get('/', function (req,res) {
   res.sendFile(path + "index.html");

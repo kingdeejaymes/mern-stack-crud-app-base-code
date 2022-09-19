@@ -1,7 +1,5 @@
 # Baseline Code for MERN Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 Go inside the project directory of either backend or frontend to run. You can open two separated terminal:
@@ -34,6 +32,8 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 ### `nodemon server`
 
 # Running the Front End separately (Optional)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 1. Run script
 

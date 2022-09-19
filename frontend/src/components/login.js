@@ -44,7 +44,7 @@ const Login = props => {
         <h4 className="card-title">LOGIN</h4>
         <div className="submit-form">
           <div className="form-group">
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                   type="text"
                   className="form-control"
@@ -56,9 +56,9 @@ const Login = props => {
                   placeholder="Username"
                 />
               {/* </div></div><input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> */}
-              <label for="floatingInput">Username</label>
+              <label htmlFor="floatingInput">Username</label>
             </div>
-            <div class="form-floating">
+            <div className="form-floating">
               <input
                 type="password"
                 className="form-control"
@@ -70,7 +70,7 @@ const Login = props => {
                 placeholder="Password"
               />
               {/* <input type="password" class="form-control" id="floatingPassword" placeholder="Password"> */}
-              <label for="floatingPassword">Password</label>
+              <label htmlFor="floatingPassword">Password</label>
             </div>
             <div className="container" style={{ marginTop: '20px'}}>
               <div className="row">
