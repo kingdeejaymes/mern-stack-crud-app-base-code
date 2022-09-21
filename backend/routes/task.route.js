@@ -8,7 +8,7 @@ module.exports = app => {
   // Retrieve all Task
   router.get("/", authJwt.verifyToken, tasks.findAll);
   // Update a Task
-  // router.put("/:id", authJwt.verifyToken, tasks.update);
+  router.put("/:id", authJwt.verifyToken, tasks.update);
   // // Retrieve all published Task
   // router.get("/published", tasks.findAllPublished);
   // // Retrieve a single Task with id

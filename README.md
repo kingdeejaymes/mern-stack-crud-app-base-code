@@ -7,6 +7,7 @@ BACKEND
 - dotenv
 - jsonwebtoken
 - mongoose
+- x-access-token (as request headers)
 
 FRONTEND
 - react
