@@ -1,5 +1,19 @@
 # Baseline Code for MERN Stack
 
+These includes the following:
+
+BACKEND
+- bcryptjs (for password encryption/decryption)
+- dotenv
+- jsonwebtoken
+- mongoose
+
+FRONTEND
+- react
+- bootstrap
+- bootswatch
+- axios
+
 ## Available Scripts
 
 Go inside the project directory of either backend or frontend to run. You can open two separated terminal:
