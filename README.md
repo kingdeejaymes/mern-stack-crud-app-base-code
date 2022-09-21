@@ -1,4 +1,4 @@
-# Baseline Code for MERN Stack
+# Baseline Code for MERN Stack (NO REDUX)
 
 These includes the following:
 
