@@ -63,7 +63,8 @@ function App() {
 
       <div className="container" style={{ marginTop: "120px"}}>
         <Switch>
-          <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
+          {/* <Route exact path={["/", "/restaurants"]} component={RestaurantsList} /> */}
+          <Route exact path={["/", "/todopage"]} component={ToDoPage} />
           <Route 
             path="/restaurants/:id/review"
             render={(props) => (

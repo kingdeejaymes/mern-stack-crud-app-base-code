@@ -35,14 +35,12 @@ BE was also based on this tutorial https://www.bezkoder.com/node-express-mongodb
 
 2. Create the `.env` file under backend directory and paste the details for DB connections string based on your created MongoDB atlas 
 
-### `DB=mongodb+srv://deej:mernstack2022@cluster0.vzroueu.mongodb.net/mern_db?retryWrites=true&w=majority`
+### `DB = mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.vzroueu.mongodb.net/<DB>?retryWrites=true&w=majority`
 ### `PORT=3001`
+### `SECRET = kingdeej-sample-jwt-secret-key` (Random String that can be generated)
+### `NODE_ENV = production` (development or production)
 
-3. Export the deployable static/frontend files then copy all of the contents of `build` dir of frontend to `views` dir of backend
-
-### `npm run build`
-
-4. Run server using Nodemon
+3. Run server using Nodemon
 
 ### `nodemon server`
 
@@ -57,6 +55,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Building the production code
 
 ### `npm run build`
+
+# Deploying Backend and Frontend (Prod Build): 
+
+1. Just run the command below for frontend production build
+
+### `npm run build`
+
+2. Change the NODE_ENV in .env to production
+
+### `NODE_ENV = production` (development or production)
+
+3. Then you can just deploy to Heroku
+
+https://docs.google.com/document/d/1-Y5JTt7cogyE-4CX6dkK1mG_2ax46zy1q4Qi71AyGZY/edit
 
 # TODO on FrontEnd Routes
 

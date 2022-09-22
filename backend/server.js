@@ -1,5 +1,6 @@
 const express = require("express");
-const path = __dirname + '/views/';
+//const path = __dirname + '/views/';
+const path = require('path');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -36,13 +37,27 @@ app.use((req, res, next) => {
 // });
 
 // Serve the static files generated from Frontend(ReactJS) in 'views' dir
-app.use(express.static(path));
-app.get('/', function (req,res) {
-  res.sendFile(path + "index.html");
-});
+// app.use(express.static(path));
+// app.get('/', function (req,res) {
+//   res.sendFile(path + "index.html");
+// });
 
 require("./routes/auth.route")(app); // login and registration
 require("./routes/task.route")(app);
+
+// Serve frontend from build folder
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+  app.get('*', (req, res) =>
+    res.sendFile(
+      path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+    )
+  );
+} else {
+  app.get('/', (req, res) => res.send('Please set to production'));
+}
+
 
 try {
     // set port, listen for requests
