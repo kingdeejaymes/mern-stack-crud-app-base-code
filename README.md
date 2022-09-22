@@ -52,10 +52,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `npm start`
 
-# Building the production code
-
-### `npm run build`
-
 # Deploying Backend and Frontend (Prod Build): 
 
 1. Just run the command below for frontend production build
